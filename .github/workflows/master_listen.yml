@@ -49,10 +49,7 @@ jobs:
       - name: npm install, build, and test
 
         run: |
-          (sudo apt-get install g++ build-essential)
-          sudo apt-get install nodejs
-
-          (cd programs/server && npm install --production)
+         (cd programs/server && npm install --production)
 
           npm run build --if-present
 
@@ -69,9 +66,6 @@ jobs:
           name: node-app
 
           path: .
-
-
-
 
   deploy:
 
