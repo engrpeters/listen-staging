@@ -26,6 +26,10 @@ env:
   AZURE_WEBAPP_NAME: listen    # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
   NODE_VERSION: '16.x'                # set this to the node version to use
+  MONGO_URL: mongodb+srv://theneighborhood:KeDyk1HQFeVkO2cZ@cluster0-lr63r.mongodb.net/test?retryWrites=true&w=majority
+  ROOT_URL: http://localhost
+  PORT: 3000
+  MONGO_OPLOG_URL: mongodb+srv://oplog:omHz8Bsx6ofSw24q@cluster0-lr63r.mongodb.net/local?retryWrites=true&w=majority
 
 permissions:
   contents: read
@@ -44,7 +48,7 @@ jobs:
 
     - name: npm install, build, and test
       run: |
-        npm install
+       (cd programs/server && npm install --production)
         npm run build --if-present
         npm run test --if-present
 
