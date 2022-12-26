@@ -43,15 +43,15 @@ jobs:
 
     steps:
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
       - name: Set up Node.js version
 
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v1
 
         with:
 
-          node-version: '16.x'
+          node-version: '14.x'
 
       - name: npm install, build, and test
 
@@ -111,7 +111,8 @@ jobs:
 
           slot-name: 'production'
 
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_0857a14a8aaa444d9d7b2621ac03cd5c }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_f5048a971752421cb921ebec4044b693 }}
+
 
           package: .
 
